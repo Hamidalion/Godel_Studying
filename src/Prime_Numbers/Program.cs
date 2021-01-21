@@ -6,26 +6,37 @@ namespace Prime_Numbers
     {
         static void Main(string[] args)
         {
-            Console.Write("Please, enter number: ");
-            int number = int.Parse(Console.ReadLine());
+            Link1:
+            Console.Write("Please, enter number: \n");
+            string enteringValue = Console.ReadLine();
 
-            for (int i = 1; i <= number; i++)
+            int number;
+
+            if ((int.TryParse(enteringValue, out number)) & (number > 0))
             {
-                bool condition = true;
-
-                for (int j = 2; j < i; j++)
+                for (int i = 1; i <= number; i++)
                 {
-                    if (i % j == 0)
+                    bool condition = true;
+
+                    for (int j = 2; j < i; j++)
                     {
-                        condition = false;
+                        if (i % j == 0)
+                        {
+                            condition = false;
+                        }
+                    }
+                    if (condition)
+                    {
+                        Console.Write($"{i}, ");
                     }
                 }
-                if (condition)
-                {
-                    Console.Write($"{i}, ");
-                }
+                Console.WriteLine("\n");
             }
-            Console.ReadKey();
+            else
+            {
+                Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");
+            }
+            goto Link1;
         }
     }
 }
