@@ -6,47 +6,47 @@ namespace Recursion
     {
         static void Main(string[] args)
         {
+            Link1:
             Console.Write("Please, enter number: ");
-            int number = int.Parse(Console.ReadLine());
+            string enteringValue = Console.ReadLine();
 
-            #region withoutRecursion
+            int number;
 
-            //int factorial = 1;
-
-            //for (int i = 1; i <= number; i++)
-            //{
-            //    factorial *= i;
-
-            //    if (i == number)
-            //    {
-            //        Console.Write($"{i}=");
-            //    }
-            //    else
-            //    {
-            //        Console.Write($"{i}*");
-            //    }
-            //}
-            //Console.Write(factorial);
-            //Console.ReadKey();
-            //return 0;
-            #endregion
-
-            #region withRecursion
-            Console.WriteLine("Factorial number {0} = {1}", number, factorial(number));
-            Console.ReadLine();
-            #endregion
-        }
-
-        static int factorial(int number)
-        {
-            if (number == 1)
+            if ((int.TryParse(enteringValue, out number)) & (number > 0))
             {
-                return 1;
+
+                static int WhithoutFactorial(int number)
+                {
+                    int whithoutFactorial = 1;
+                    for (int i = 1; i <= number; i++)
+                    {
+                        whithoutFactorial *= i;
+
+                    }
+                    return whithoutFactorial;
+                }
+                Console.WriteLine("\nFactorial (whithout RECURSION) number {0}={1}", number, WhithoutFactorial(number)); ;
+
+                Console.WriteLine("\nFactorial (whith RECURSION) number {0}={1}", number, Factorial(number));
+                Console.WriteLine();
+
+                static int Factorial(int number)
+                {
+                    if (number == 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return number * Factorial(number - 1);
+                    }
+                }
             }
             else
             {
-                return number * factorial(number - 1);
+                Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");
             }
+            goto Link1;
         }
     }
 }
