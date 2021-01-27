@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Prime_Numbers
 {
@@ -16,7 +18,7 @@ namespace Prime_Numbers
             {
                 for (int i = 1; i <= number; i++)
                 {
-                    bool condition = true;
+                    bool condition = true;       
 
                     for (int j = 2; j < i; j++)
                     {
@@ -30,8 +32,8 @@ namespace Prime_Numbers
                         Console.Write($"{i}, ");
                     }
                 }
-                Console.WriteLine("\n");
             }
+
             else
             {
                 Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");

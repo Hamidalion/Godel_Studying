@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursion", "src\Recursion\Recursion.csproj", "{D4793C3B-519B-4D3F-9F7F-90BB9307E3E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prime_Numbers", "src\Prime_Numbers\Prime_Numbers.csproj", "{F0D81F50-D7C7-4D45-A1A9-DDF83047D793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prime_Numbers", "src\Prime_Numbers\Prime_Numbers.csproj", "{F0D81F50-D7C7-4D45-A1A9-DDF83047D793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinlge_Linked_List", "src\Sinlge_Linked_List\Sinlge_Linked_List.csproj", "{31979620-FC65-40F7-9519-D429F12FB8F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F0D81F50-D7C7-4D45-A1A9-DDF83047D793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0D81F50-D7C7-4D45-A1A9-DDF83047D793}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0D81F50-D7C7-4D45-A1A9-DDF83047D793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31979620-FC65-40F7-9519-D429F12FB8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31979620-FC65-40F7-9519-D429F12FB8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31979620-FC65-40F7-9519-D429F12FB8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31979620-FC65-40F7-9519-D429F12FB8F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
