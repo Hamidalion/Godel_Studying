@@ -3,6 +3,10 @@ using System.Collections;
 
 namespace Sinlge_Linked_List.Model
 {
+    /// <summary>
+    /// Linked List.
+    /// </summary>
+    /// <typeparam name="T">Date type.</typeparam>
     public class LinkedList<T> : IEnumerable
     {
         /// <summary>
@@ -76,6 +80,10 @@ namespace Sinlge_Linked_List.Model
                     Console.WriteLine($"Remove, {data}");
 
                     return;
+                }
+                else
+                {
+                    Console.WriteLine("Could't find item. Retry it.");
                 }
 
                 var current = FirstValue.Next;

@@ -1,7 +1,14 @@
 ﻿namespace Sinlge_Linked_List.Model
-{
+{   
+    /// <summary>
+    /// One node of linked list.
+    /// </summary>
+    /// <typeparam name="T">Date type.</typeparam>
     public class Node<T>
     {
+        /// <summary>
+        /// Default date.
+        /// </summary>
         private T data = default(T);
 
         /// <summary>
