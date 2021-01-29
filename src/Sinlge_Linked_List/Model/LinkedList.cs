@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sinlge_Linked_List.Resources;
+using System;
 using System.Collections;
 
 namespace Sinlge_Linked_List.Model
@@ -50,7 +51,7 @@ namespace Sinlge_Linked_List.Model
             LastValue = node;
             NodeCount = 1;
 
-            Console.WriteLine($"Set {node}");
+            Console.WriteLine(Message.Set + node);
         }
 
         public void Add(T data)
@@ -60,7 +61,7 @@ namespace Sinlge_Linked_List.Model
                 var node = new Node<T>(data);
                 LastValue.Next = node;
                 LastValue = node;
-                Console.WriteLine($"Set {node}");
+                Console.WriteLine(Message.Set + node);
                 NodeCount++;
             }
             else
@@ -77,13 +78,13 @@ namespace Sinlge_Linked_List.Model
                 {
                     FirstValue = FirstValue.Next;
                     NodeCount--;
-                    Console.WriteLine($"Remove, {data}");
+                    Console.WriteLine(Message.Remove + data);
 
                     return;
                 }
                 else
                 {
-                    Console.WriteLine("Could't find item. Retry it.");
+                    Console.WriteLine(Message.Notfound);
                 }
 
                 var current = FirstValue.Next;

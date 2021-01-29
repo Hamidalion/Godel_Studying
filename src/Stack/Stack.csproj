@@ -6,17 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Message.Designer.cs">
+    <Compile Update="Resources\ResourceMessage.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Message.resx</DependentUpon>
+      <DependentUpon>ResourceMessage.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Message.resx">
+    <EmbeddedResource Update="Resources\ResourceMessage.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Message.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResourceMessage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
