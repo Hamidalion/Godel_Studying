@@ -1,13 +1,13 @@
-﻿using Stack.Model;
+﻿using List.Model;
 using System;
 
-namespace Stack
+namespace List
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var stackArray = new StackArray<int>();
+            var stackArray = new SimgleList<int>();
 
             link1:
             Console.WriteLine("If you want to add new item, press - 1\nIf you want to remove item, press - 2\nIf you want to shaw to all, press - 3");

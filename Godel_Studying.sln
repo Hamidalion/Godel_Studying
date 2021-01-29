@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prime_Numbers", "src\Prime_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinlge_Linked_List", "src\Sinlge_Linked_List\Sinlge_Linked_List.csproj", "{31979620-FC65-40F7-9519-D429F12FB8F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "src\Stack\Stack.csproj", "{8BD72D2A-D73D-4711-ABEA-253052DF0638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "src\Stack\Stack.csproj", "{8BD72D2A-D73D-4711-ABEA-253052DF0638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List", "src\List\List.csproj", "{92A0FFD3-8C0C-4BA4-87CA-38A6B6B709B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8BD72D2A-D73D-4711-ABEA-253052DF0638}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BD72D2A-D73D-4711-ABEA-253052DF0638}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BD72D2A-D73D-4711-ABEA-253052DF0638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A0FFD3-8C0C-4BA4-87CA-38A6B6B709B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A0FFD3-8C0C-4BA4-87CA-38A6B6B709B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A0FFD3-8C0C-4BA4-87CA-38A6B6B709B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A0FFD3-8C0C-4BA4-87CA-38A6B6B709B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
