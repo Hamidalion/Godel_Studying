@@ -13,9 +13,14 @@ namespace Prime_Numbers
             string enteringValue = Console.ReadLine();
 
             int number;
+            StringBuilder sb = new StringBuilder();
+
+            
 
             if ((int.TryParse(enteringValue, out number)) & (number > 0))
             {
+                
+
                 for (int i = 1; i <= number; i++)
                 {
                     bool condition = true;       
@@ -27,9 +32,12 @@ namespace Prime_Numbers
                             condition = false;
                         }
                     }
+                       
                     if (condition)
                     {
-                        Console.Write($"{i}, ");
+        
+                        sb.Append($"{i},");
+                        //Console.Write($"{i}, ");
                     }
                 }
             }
@@ -38,6 +46,11 @@ namespace Prime_Numbers
             {
                 Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");
             }
+            string allText = sb.ToString();
+            string withOutLast = allText.Remove(allText.Length - 1);
+            Console.WriteLine(withOutLast);
+            Console.WriteLine();
+
             goto Link1;
         }
     }
