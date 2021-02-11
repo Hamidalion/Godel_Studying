@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace Recursion
 {
@@ -15,9 +16,9 @@ namespace Recursion
             if ((int.TryParse(enteringValue, out number)) & (number > 0))
             {
 
-                static int WhithoutFactorial(int number)
+                static BigInteger WhithoutFactorial(int number)
                 {
-                    int whithoutFactorial = 1;
+                    BigInteger whithoutFactorial = 1;
                     for (int i = 1; i <= number; i++)
                     {
                         whithoutFactorial *= i;
@@ -30,7 +31,7 @@ namespace Recursion
                 Console.WriteLine("\nFactorial (whith RECURSION) number {0}={1}", number, Factorial(number));
                 Console.WriteLine();
 
-                static int Factorial(int number)
+                static BigInteger Factorial(int number)
                 {
                     if (number == 1)
                     {
