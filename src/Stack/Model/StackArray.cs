@@ -76,9 +76,9 @@ namespace Stack.Model
             }
         }
 
-        public override string ToString()
-        {
-            return Count + ResourceMessage.Stack;
-        }
+        //public override string ToString()
+        //{
+        //    return Count + ResourceMessage.Stack;
+        //}
     }
 }
