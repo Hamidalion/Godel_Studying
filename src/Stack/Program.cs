@@ -7,10 +7,13 @@ namespace Stack
     {
         static void Main(string[] args)
         {
+
             var stackArray = new StackArray<int>();
 
             link1:
-            Console.WriteLine("If you want to add new item, press - 1\nIf you want to remove item, press - 2\nIf you want to shaw to all, press - 3");
+            Console.WriteLine(new string('-', 40));
+            Console.WriteLine("If you want to\n \t\tadd new item, press - 1\n \t\tremove item, press - 2\n \t\tshaw of last, press - 3");
+            Console.WriteLine(new string('-', 40));
             string selection = Console.ReadLine();
 
             switch (selection)
@@ -26,7 +29,16 @@ namespace Stack
 
                 case "2":
                     Console.WriteLine("Enter item to Remove");
-                    stackArray.Pop();
+                    int removeItem = int.Parse(Console.ReadLine());
+
+                    if (removeItem != stackArray.Peek())
+                    {
+                        Console.WriteLine($"You are write a wrong number. The last nuber is {stackArray.Peek()}");
+                    }
+                    else
+                    {
+                        stackArray.Pop();
+                    }
 
                     goto link1;
                     break;

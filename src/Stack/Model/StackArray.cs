@@ -41,7 +41,7 @@ namespace Stack.Model
         }
 
         /// <summary>
-        /// See & remove item.
+        /// Remove item.
         /// </summary>
         /// <returns>Last item.</returns>
         public T Pop()
@@ -76,9 +76,9 @@ namespace Stack.Model
             }
         }
 
-        public override string ToString()
-        {
-            return Count + ResourceMessage.Stack;
-        }
+        //public override string ToString()
+        //{
+        //    return Count + ResourceMessage.Stack;
+        //}
     }
 }
