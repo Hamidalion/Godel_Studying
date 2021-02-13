@@ -41,7 +41,7 @@ namespace Stack.Model
         }
 
         /// <summary>
-        /// See & remove item.
+        /// Remove item.
         /// </summary>
         /// <returns>Last item.</returns>
         public T Pop()
