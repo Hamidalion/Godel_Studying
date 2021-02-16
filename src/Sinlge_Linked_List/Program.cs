@@ -14,11 +14,11 @@ namespace Sinlge_Linked_List
 
             do
             {
-                Console.WriteLine(new string('-', 40));
+                Console.WriteLine(new string('-', 38));
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("If you want to: add item, press - 1\n \t\tremove item, press - 2\n \t\tshaw all, press - 3\n \t\tto exit, press - 4");
+                Console.WriteLine("If you want to: add item, press    - 1\n \t\tremove item, press - 2\n \t\tshaw all, press    - 3\n \t\tto exit, press \t   - 4");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(new string('-', 40));
+                Console.WriteLine(new string('-', 38));
 
                 try
                 {
