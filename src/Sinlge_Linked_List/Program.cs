@@ -1,5 +1,6 @@
 ﻿using Sinlge_Linked_List.Model;
 using System;
+using System.Linq;
 
 namespace Sinlge_Linked_List
 {
@@ -7,47 +8,82 @@ namespace Sinlge_Linked_List
     {
         static void Main(string[] args)
         {
-            var list = new LinkedList<int>();
+            var list = new LinkedList<object>();
 
-            link1:
-            Console.WriteLine("If you want to add new item, press - 1\nIf you want to remove item, press - 2\nIf you want to shaw to all, press - 3");
-            string selection = Console.ReadLine();
+            int selection = 0;
 
-            switch (selection)
+            do
             {
-                case "1":
+                Console.WriteLine(new string('-', 40));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("If you want to: add item, press - 1\n \t\tremove item, press - 2\n \t\tshaw all, press - 3\n \t\tto exit, press - 4");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine(new string('-', 40));
 
-                    Console.WriteLine("Enter new item");
-                    int newItem = Int32.Parse(Console.ReadLine());
-                    list.Add(newItem);
-
-                    goto link1;
-                    break;
-
-                case "2":
-                    Console.WriteLine("Enter item to Remove");
-                    int removeItem = Int32.Parse(Console.ReadLine());
-                    list.Remove(removeItem);
-
-                    goto link1;
-                    break;
-
-                case "3":
-                    Console.WriteLine("All item");
-                    foreach (var item in list)
+                try
+                {
+                    selection = (int)Convert.ChangeType(Console.ReadLine(), typeof(int));
+                }
+                catch (Exception e)
+                {
+                    Type[] expectedExceptions = { typeof(InvalidCastException), 
+                                                  typeof(FormatException), 
+                                                  typeof(ArgumentNullException), 
+                                                  typeof(OverflowException)};
+                    if (expectedExceptions.Any(ex => ex == e.GetType()))
                     {
-                        Console.WriteLine(item + " ");
+                        Console.WriteLine(e.Message);
+                        continue;
                     }
+                    throw;
+                }
 
-                    goto link1;
-                    break;
+                switch (selection)
+                {
+                    case 1:
+                        Console.WriteLine("Enter new item");
+                        var newItem = Console.ReadLine();
+                        list.Add(newItem);
+                        break;
 
-                default:
-                    Console.WriteLine("Unknown operation");
+                    case 2:
+                        Console.WriteLine("Enter item to Remove");
+                        var removeItem = Console.ReadLine();
+                        list.Remove(removeItem);
+                        break;
 
-                    goto link1;
-                    break;
+                    case 3:
+                        foreach (var item in list)
+                        {
+                            Console.WriteLine(item + ";");
+                        }
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Do you want to exit y/n?");
+                        string switch_on = Console.ReadLine();
+
+                        switch (switch_on)
+                        {
+                            case "y":
+                                Environment.Exit(0);
+                                break;
+                            case "n":
+                                continue;
+                            default:
+                                Console.WriteLine("Repeat answer.");
+                                continue;
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("Not a correct input. Enter value at 1 to 4");
+                        selection = 1;
+                        continue;
+                }
             }
+            while (selection <= 4  );
+
             Console.ReadLine();
         }
     }

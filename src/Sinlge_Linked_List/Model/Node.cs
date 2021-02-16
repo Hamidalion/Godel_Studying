@@ -3,21 +3,16 @@
     /// <summary>
     /// One node of linked list.
     /// </summary>
-    /// <typeparam name="T">Date type.</typeparam>
+    /// <typeparam name="T">Data type.</typeparam>
     public class Node<T>
     {
         /// <summary>
-        /// Default date.
-        /// </summary>
-        private T data = default(T);
-
-        /// <summary>
-        /// Property date of instace.
+        /// Property data of instace.
         /// </summary>
         public T Data { get; set; }
 
         /// <summary>
-        /// An instance of the class stores next adress pf instance.
+        /// An instance of the class stores next address of instance.
         /// </summary>
         public Node<T> Next { get; set; }
 

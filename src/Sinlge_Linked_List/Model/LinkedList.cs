@@ -7,7 +7,7 @@ namespace Sinlge_Linked_List.Model
     /// <summary>
     /// Linked List.
     /// </summary>
-    /// <typeparam name="T">Date type.</typeparam>
+    /// <typeparam name="T">Data type.</typeparam>
     public class LinkedList<T> : IEnumerable
     {
         /// <summary>
@@ -36,7 +36,7 @@ namespace Sinlge_Linked_List.Model
         }
 
         /// <summary>
-        /// Overloading constructor whith data.
+        /// Overloading constructor with data.
         /// </summary>
         /// <param name="data">Input data.</param>
         public LinkedList(T data)
@@ -50,8 +50,6 @@ namespace Sinlge_Linked_List.Model
             FirstValue = node;
             LastValue = node;
             NodeCount = 1;
-
-            Console.WriteLine(Message.Set + node);
         }
 
         public void Add(T data)
@@ -61,7 +59,6 @@ namespace Sinlge_Linked_List.Model
                 var node = new Node<T>(data);
                 LastValue.Next = node;
                 LastValue = node;
-                Console.WriteLine(Message.Set + node);
                 NodeCount++;
             }
             else
@@ -78,7 +75,6 @@ namespace Sinlge_Linked_List.Model
                 {
                     FirstValue = FirstValue.Next;
                     NodeCount--;
-                    Console.WriteLine(Message.Remove + data);
 
                     return;
                 }
