@@ -1,19 +1,24 @@
-﻿using StackBaseonLL.Resources;
+﻿using Queue.Resources;
 using System;
 using System.Collections;
 
-namespace StackBaseonLL.Model
+namespace Queue.Model
 {
     /// <summary>
     /// Linked List.
     /// </summary>
     /// <typeparam name="T">Data type.</typeparam>
-    public class NodeStack<T> : IEnumerable
+    public class Queue<T> : IEnumerable
     {
         /// <summary>
         /// Upper value.
         /// </summary>
         Node<T> upperValue;
+
+        /// <summary>
+        /// Lower value.
+        /// </summary>
+        Node<T> lowerValue;
 
         /// <summary>
         /// Number of Nodes.
@@ -37,30 +42,39 @@ namespace StackBaseonLL.Model
         /// Add upper value.
         /// </summary>
         /// <param name="item">Value.</param>
-        public void Push(T item)
+        public void Enqueue(T item)
         {
             Node<T> node = new Node<T>(item);
-            node.Next = upperValue; 
-            upperValue = node;
+
+            Node<T> lowerNode = lowerValue;
+            lowerValue = node;
+
+            if (count == 0)
+            {
+                upperValue = lowerValue;
+            }
+            else
+            {
+                lowerNode.Next = lowerValue;
+            }
             count++;
         }
 
         /// <summary>
-        /// Remove upper value.
+        /// Remove lower value.
         /// </summary>
         /// <returns>Value.</returns>
-        public T Pop()
+        public T Dequeue()
         {
             if (IsEmpty)
             {
                 throw new InvalidOperationException(Message.Empty);
             }
-
-            Node<T> temp = upperValue;
+            T output = upperValue.Data;
             upperValue = upperValue.Next; 
             count--;
 
-            return temp.Data;
+            return output;
         }
 
         /// <summary>
@@ -74,7 +88,7 @@ namespace StackBaseonLL.Model
                 throw new InvalidOperationException(Message.Empty);
             }
 
-            return upperValue.Data;
+            return lowerValue.Data;
         }
 
         public IEnumerator GetEnumerator()
