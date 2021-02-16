@@ -16,7 +16,7 @@ namespace StackBaseonLL.Model
         Node<T> upperValue;
 
         /// <summary>
-        /// Nomber of Nodes.
+        /// Number of Nodes.
         /// </summary
         int count;
 
@@ -33,15 +33,22 @@ namespace StackBaseonLL.Model
             get { return count == 0; }
         }
 
+        /// <summary>
+        /// Add upper value.
+        /// </summary>
+        /// <param name="item">Value.</param>
         public void Push(T item)
         {
-            // увеличиваем стек
             Node<T> node = new Node<T>(item);
-            node.Next = upperValue; // переустанавливаем верхушку стека на новый элемент
+            node.Next = upperValue; 
             upperValue = node;
             count++;
         }
 
+        /// <summary>
+        /// Remove upper value.
+        /// </summary>
+        /// <returns>Value.</returns>
         public T Pop()
         {
             // если стек пуст, выбрасываем исключение
@@ -57,6 +64,10 @@ namespace StackBaseonLL.Model
             return temp.Data;
         }
 
+        /// <summary>
+        /// Upper value.
+        /// </summary>
+        /// <returns>Value.</returns>
         public T Peek()
         {
             if (IsEmpty)
