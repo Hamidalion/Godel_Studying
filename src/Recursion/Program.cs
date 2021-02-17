@@ -1,53 +1,29 @@
 ﻿using System;
-using System.Numerics;
 
-namespace Recursion
+namespace Factorial
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Link1:
-            Console.Write("Please, enter number: ");
-            string enteringValue = Console.ReadLine();
-
-            int number;
-
-            if ((int.TryParse(enteringValue, out number)) & (number > 0))
+            do
             {
+                Console.Write("Please, enter number: ");
+                string enteringValue = Console.ReadLine();
+                int number;
 
-                static BigInteger WhithoutFactorial(int number)
+                if ((int.TryParse(enteringValue, out number)) & (number > 1))
                 {
-                    BigInteger whithoutFactorial = 1;
-                    for (int i = 1; i <= number; i++)
-                    {
-                        whithoutFactorial *= i;
+                    Console.WriteLine($"\nFactorial (whithout RECURSION) number {number}={WhithoutRecursion.FactorialFor(number)}"); ;
 
-                    }
-                    return whithoutFactorial;
+                    Console.WriteLine($"\nFactorial (whith RECURSION) number {number}={Recursion.FactorialRecursion(number)}");
+                    Console.WriteLine();
                 }
-                Console.WriteLine("\nFactorial (whithout RECURSION) number {0}={1}", number, WhithoutFactorial(number)); ;
-
-                Console.WriteLine("\nFactorial (whith RECURSION) number {0}={1}", number, Factorial(number));
-                Console.WriteLine();
-
-                static BigInteger Factorial(int number)
+                else
                 {
-                    if (number == 1)
-                    {
-                        return 1;
-                    }
-                    else
-                    {
-                        return number * Factorial(number - 1);
-                    }
+                    Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");
                 }
-            }
-            else
-            {
-                Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");
-            }
-            goto Link1;
+            } while (true);
         }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursion", "src\Recursion\Recursion.csproj", "{D4793C3B-519B-4D3F-9F7F-90BB9307E3E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factorial", "src\Recursion\Factorial.csproj", "{D4793C3B-519B-4D3F-9F7F-90BB9307E3E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prime_Numbers", "src\Prime_Numbers\Prime_Numbers.csproj", "{F0D81F50-D7C7-4D45-A1A9-DDF83047D793}"
 EndProject
