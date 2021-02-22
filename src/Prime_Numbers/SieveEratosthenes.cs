@@ -14,7 +14,6 @@ namespace Prime_Numbers
             {
                 numbers.Add((int)i);
             }
-
             for (var i = 0; i < numbers.Count; i++)
             {
                 for (var j = 2u; j < selection; j++)
