@@ -21,7 +21,7 @@ namespace Factorial
                 }
                 else
                 {
-                    Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");
+                    Console.Write("You entered the wrong number. Please enter integer number.\n");
                 }
             } while (true);
         }

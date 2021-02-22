@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Prime_Numbers
@@ -8,50 +8,74 @@ namespace Prime_Numbers
     {
         static void Main(string[] args)
         {
-            Link1:
-            Console.Write("Please, enter number: \n");
-            string enteringValue = Console.ReadLine();
+            int selection = 0;
 
-            int number;
-            StringBuilder sb = new StringBuilder();
-
-            
-
-            if ((int.TryParse(enteringValue, out number)) & (number > 0))
+            do
             {
-                
+                Console.Write("Please, enter number: \n");
 
-                for (int i = 1; i <= number; i++)
+                StringBuilder sb = new StringBuilder();
                 {
-                    bool condition = true;       
-
-                    for (int j = 2; j < i; j++)
+                    try
                     {
-                        if (i % j == 0)
-                        {
-                            condition = false;
-                        }
+                        selection = (int)Convert.ChangeType(Console.ReadLine(), typeof(int));
                     }
-                       
-                    if (condition)
+                    catch (Exception e)
                     {
-        
-                        sb.Append($"{i},");
-                        //Console.Write($"{i}, ");
+                        Type[] expectedExceptions = { typeof(InvalidCastException),
+                                                          typeof(FormatException),
+                                                          typeof(ArgumentNullException),
+                                                          typeof(OverflowException)};
+                        if (expectedExceptions.Any(ex => ex == e.GetType()))
+                        {
+                            Console.WriteLine(e.Message);
+                            continue;
+                        }
+                        throw;
+                    }
+
+                    if (selection > 0)
+                    {
+
+                        
+
+
+
+                        for (int i = 2; i <= selection; i++)
+                        {
+                            bool condition = true;
+
+                            for (int j = 2; j < i; j++)
+                            {
+                                if (i % j == 0)
+                                {
+                                    condition = false;
+                                }
+                            }
+
+                            if (condition)
+                            {
+                                sb.Append($"{i},");
+                            }
+                        }
+
+                        string allText = sb.ToString();
+                        string withOutLast = allText.Remove(allText.Length - 1);
+
+                        Console.WriteLine(withOutLast);
+                        Console.WriteLine();
+
+
+                        var primeNumbers = SieveEratosthenes.AddSieveEratosthenes(selection);
+                        Console.WriteLine("Prime numbers from {0}:", selection);
+                        Console.WriteLine(string.Join(",", primeNumbers));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Number must be positive.");
                     }
                 }
-            }
-
-            else
-            {
-                Console.Write("You entered the wrong number. Please enter number from 1 to 2 147 483 647\n");
-            }
-            string allText = sb.ToString();
-            string withOutLast = allText.Remove(allText.Length - 1);
-            Console.WriteLine(withOutLast);
-            Console.WriteLine();
-
-            goto Link1;
+            } while (true);
         }
     }
 }
