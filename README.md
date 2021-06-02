@@ -1,5 +1,5 @@
 # Godel_Studying
-This repository was created as a repository for completing internship some tasks at Godel Tech.
+This repository was created as a repository for completing internship some tasks at Godel Tech
 
 ##### Purpose #####
 Get practice in C# programming.
