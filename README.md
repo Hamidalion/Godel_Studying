@@ -6,7 +6,7 @@ This repository was created as a repository for completing internship some tasks
 ##### Purpose #####
 Get practice in C# programming.
 
-### Сontent###
+### Сontent ###
 1. List
 2. Prime Numbers
 3. Queue
