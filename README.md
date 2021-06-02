@@ -1,6 +1,4 @@
 # Godel_Studying
-
-## Acquaintance ##
 This repository was created as a repository for completing internship some tasks at Godel Tech.
 
 ##### Purpose #####
